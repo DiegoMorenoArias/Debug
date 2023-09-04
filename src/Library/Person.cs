@@ -42,7 +42,7 @@ namespace Ucu.Poo.Persons
         {
             get
             {
-                return $"{this.Name}{this.FamilyName}";
+                return $"{this.Name} {this.FamilyName}"; // Se le agregó el espacio entre ambas variables para que devuelvan lo esperado.
             }
         }
 
@@ -59,7 +59,8 @@ namespace Ucu.Poo.Persons
             get
             {
                 DateTime today = DateTime.Today;
-                int age = this.BirthDate.Year - today.Year;
+                int age = today.Year - this.BirthDate.Year; // La forma de calcular la edad fue corregida. Antes era Fecha de nacimiento - Año actual
+                // y ahora es Año actual - Fecha de nacimiento. Esto se hizo en orden de que el valor esperado sea el correcto.
 
                 if (today.Month < this.BirthDate.Month || (today.Month == this.BirthDate.Month && today.Day < this.BirthDate.Day))
                 {
